@@ -18,3 +18,8 @@ Caveats
 ========
 
 This project is still very much a work in progress.
+
+Screenshots
+========
+
+![home screen](https://dl.dropboxusercontent.com/u/868773/github/moviebox.png "Home screen")
