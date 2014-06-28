@@ -4,7 +4,9 @@
 		<div class="col-md-6">
 			<div style="padding: 24px;">
 				<a href="/"><h3>Home</h3></a>
-				<h2>#prc.video.title#</h2>
+				<img src="/data/poster/#prc.video.id#.jpg" align="left" style="margin: 16px;">
+				<h2>#prc.video.title# (#prc.video.release_year#)</h2>
+				<h4>#prc.video.genres#</h4>
 				<p>#prc.video.overview#</p>
 				<p>Runtime: #prc.video.runtime# minutes</p>
 			</div>
