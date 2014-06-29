@@ -1,5 +1,9 @@
 component name = "MovieDAO" accessors = "false"{
 
+	public MovieDAO function init(){
+		return this;
+	}
+
 	// Check to see whether or not a movie exists in the database
 	public boolean function isKnown(required string path){
 		var sSQL = 'select filepath from movie where filepath like :path';
