@@ -4,8 +4,10 @@
 component name="IndexService" accessors="false" {
 	property name = "Logger" inject = "logbox:logger:{this}";
 	property name = "videoDirectory" inject = "coldbox:setting:videoDirectory";
-	property name = "TMDBService" inject="model";
-
+	property name = "MovieDAO" inject = "model";
+	property name = "TMDBService" inject = "model";
+	property name = "UtilityService" inject = "model";
+	
 	public IndexService function init(){
 		return this;
 	}
@@ -16,7 +18,7 @@ component name="IndexService" accessors="false" {
 		var movieData = [];
 		var secondaryImagePath = getDirectoryFromPath("/data/");
 		for(item in dlist){
-			if(!isKnown(path = item.name)){
+			if(!MovieDAO.isKnown(path = item.name)){
 				var data = TMDBService.scrape(name = listFirst(item.name, "("));
 				var theFile = directoryList(path = videoDirectory & '/' & item.name, listInfo = "query", sort = "size DESC");
 
@@ -29,7 +31,7 @@ component name="IndexService" accessors="false" {
 					genres = listAppend(genres, ' ' & g.name);
 				}
 				// Slugify the movie name
-				var id = rereplacenocase(data.title, '[^a-z0-9]', '-', 'all');
+				var id = UtilityService.slugify(data.title);
 				insertMovie.addParam(name = 'id', value = id, type = 'cf_sql_varchar');
 				insertMovie.addParam(name = 'filepath', value = '/media/' & item.name, type = 'cf_sql_varchar');
 				insertMovie.addParam(name = 'filename', value = theFile.name[1], type = 'cf_sql_varchar');
@@ -62,11 +64,4 @@ component name="IndexService" accessors="false" {
 		return;
 	}
 
-	// Check to see whether or not a movie exists in the database
-	private boolean function isKnown(required string path){
-		var sSQL = 'select filepath from movie where filepath like :path';
-		var mQuery = new Query(sql = sSQL);
-		mQuery.addParam(name = 'path', value = '%' & arguments.path & '%', type = 'cf_sql_varchar');
-		return mQuery.execute().getResult().recordCount > 0 ? true : false;
-	}
 }

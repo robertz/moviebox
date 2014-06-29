@@ -26,7 +26,7 @@
 			},
 
 			// Package scan locations
-			scanLocations = ['model.services'],
+			scanLocations = ['model.services','model.dao'],
 
 			// Stop Recursions
 			stopRecursions = [],

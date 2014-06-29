@@ -9,7 +9,8 @@ component output="false" {
 
  // Default Action
  function robsHood(event,rc,prc){
-  writeDump(IndexService.indexMovies());
+ 	writeDump(var = EntityLoad('Movie', {}, 'title ASC'));
+  // writeDump(IndexService.indexMovies());
   // var d = fileRead('/data.json');
   // writeDump(var = deserializeJSON(d), abort = 1);
   abort;
