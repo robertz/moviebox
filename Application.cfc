@@ -11,6 +11,11 @@ component{
 	this.sessionTimeout = createTimeSpan(0,0,30,0);
 	this.setClientCookies = true;
 	this.dataSource = "moviebox";
+	this.ormEnabled = true;
+	this.ormSettings = {
+		datasource = 'moviebox',
+		cfcLocation = 'model.entity'
+	};	
 	// Mappings Imports
 	import coldbox.system.*;
 
