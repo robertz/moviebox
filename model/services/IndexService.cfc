@@ -22,8 +22,15 @@ component name="IndexService" accessors="false" {
 				var data = TMDBService.scrape(name = listFirst(item.name, "("));
 				var theFile = directoryList(path = videoDirectory & item.name, listInfo = "query", sort = "size DESC");
 				var genres = '';
-				for(var g in data.genres){
-					genres = listAppend(genres, ' ' & g.name);
+				try{
+					for(var g in data.genres){
+						genres = listAppend(genres, ' ' & g.name);
+					}	
+				}
+				catch(any e){
+					// If there is an error lets see what it is.....
+					writeDump(var = item);
+					writeDump(var = data, abort = 1);
 				}
 				var movieData = {
 					'id' = UtilityService.slugify(data.title),
