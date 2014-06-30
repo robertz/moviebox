@@ -46,7 +46,7 @@
 
 		// custom settings
 		settings = {
-		   videoDirectory = "D:\Movies",
+		   videoDirectory = "D:/Movies/",
 		   apiKey = "944543bd626c6f45b27debcae8bc661d",
 		   applicationTitle = "MovieBox Video Server"
 		};

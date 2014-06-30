@@ -28,11 +28,7 @@ component name = "TMDBService" accessors = "false"{
 		return result;
 	}
 
-	/* 
-	 *	Private functions
-	 */
-
-	private struct function findMovie(required string name, string year default = ''){
+	public struct function findMovie(required string name, string year default = ''){
 		var result = {
 			'results' = [],
 			'total_pages' = 0,
@@ -47,7 +43,7 @@ component name = "TMDBService" accessors = "false"{
 		return result;
 	}
 
-	private struct function getMovieData(required string id){
+	public struct function getMovieData(required string id){
 		var result = {};
 		var r = '';
 		http url = 'http://api.themoviedb.org/3/movie/' & arguments.id & '?api_key=' & api_key result = 'r';

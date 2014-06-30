@@ -15,6 +15,10 @@
 
 
 	// Your Application Routes
+	addRoute(pattern = "admin/renamePath", handler = "admin", action="renamePath", noLayout = true);
+	addRoute(pattern = "admin/movieSearch", handler = "admin", action="movieSearch", noLayout = true);
+	addRoute(pattern = "admin/movieDetail/:slug", handler = "admin", action = "movieDetail");
+	
 	addRoute(pattern = "watch/:slug", handler = "home", action = "video");
 	addRoute(pattern = ":handler/:action?");
 

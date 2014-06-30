@@ -27,3 +27,9 @@ Home
 
 Watch/Details
 ![watch screen](https://dl.dropboxusercontent.com/u/868773/github/moviebox-watch.png "Watch screen")
+
+Administration
+![watch screen](https://dl.dropboxusercontent.com/u/868773/github/moviebox-movieadmin.png "Admin screen")
+
+Edit Details/Metadata
+![watch screen](https://dl.dropboxusercontent.com/u/868773/github/moviebox-movieedit.png "Edit screen")
