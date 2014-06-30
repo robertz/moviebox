@@ -13,7 +13,7 @@
 		</div>
 		<div class="col-md-6">
 			<div style="padding: 24px;">
-				<video width="100%" height="100%" src="#prc.video.getFilepath()#/#prc.video.getFilename()#" type="video/#prc.mediaType#" id="player1" controls="controls" poster="/data/backdrop/#prc.video.getID()#.jpg" preload="auto"></video>
+				<video width="100%" height="100%" src="media/#prc.video.getFilepath()#/#prc.video.getFilename()#" type="video/#prc.mediaType#" id="player1" controls="controls" poster="/data/backdrop/#prc.video.getID()#.jpg" preload="auto"></video>
 			</div>
 		</div>
 	</div>
